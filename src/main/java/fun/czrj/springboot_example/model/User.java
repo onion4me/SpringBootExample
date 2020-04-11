@@ -1,5 +1,9 @@
 package fun.czrj.springboot_example.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 /**
@@ -7,6 +11,9 @@ import javax.persistence.*;
  * @email zhangjian@czrj.fun
  * @date 2020/4/12
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "user")
 public class User {
@@ -19,38 +26,4 @@ public class User {
 
     @Column(name = "age", nullable = true, length = 4)
     private int age;
-
-    public User() {
-
-    }
-
-    public User(Long id,String name,int age) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 }
